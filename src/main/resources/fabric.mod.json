@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "id": "ezrename",
+  "id": "better_enchantment",
   "version": "${version}",
 
-  "name": "Easy Rename",
-  "description": "Rename items with ease",
+  "name": "Better Enchantment",
+  "description": "Remove restrictions on the enchantment command",
   "authors": [
     "LeoCodes"
   ],
 
   "license": "MIT",
-  "icon": "assets/ezrename/icon.png",
+  "icon": "assets/better_enchantment/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
       {
         "adapter": "kotlin",
-        "value": "net.leocodes.ezrename.EasyRenameMod"
+        "value": "net.leocodes.better_enchantment.BetterEnchantmentMod"
       }
     ]
   },

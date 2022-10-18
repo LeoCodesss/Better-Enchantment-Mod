@@ -1,0 +1,8 @@
+{
+  "commands.enchant.failed.noenchantment": "Enchantment %s does not exist on this item",
+  "commands.enchant.failed.noenchantment.level": "Enchantment %s does not exist on this item with level %s",
+  "commands.enchant.failed.not_valid_entity": "The Entity is not a valid entity",
+  "commands.enchant.success": "Successfully removed enchantment %s",
+  "commands.enchant.success.level.single": "Successfully removed %s level of the enchantment %s",
+  "commands.enchant.success.level.multiple": "Successfully removed %s levels of the enchantment %s"
+}
