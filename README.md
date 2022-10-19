@@ -3,8 +3,7 @@ Removes the restrictions from the *enchantment* command. Beware that Minecraft
 
 Also this mod adds a *disenchant* command, that lets you remove specific enchantments from your items.
 
-Syntax: /disenchant <target> <enchantment> <level>
-                                              ^ optional 
+Syntax: /disenchant <target> <enchantment> <level> <-- optional
 if you decide to use a level it will be subtracted from the level of your enchanted item.
 
 **Note:** you need at least a permission-level of 2 (simple op)
