@@ -1,5 +1,5 @@
 # Better-Enchantment-Mod
-Removes the restrections from the *enchantment* command. Beware that minecraft max limit on this is 127, every number higher than that will be set to 0.
+Removes the restrections from the *enchantment* command. Beware that minecrafts limit on this is 127, every number higher than that will be set to 0.
 
 Also this mod adds a disenchant command, that lets you remove spefic enchantments from your items.
 
