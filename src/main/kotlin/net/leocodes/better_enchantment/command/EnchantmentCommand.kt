@@ -12,24 +12,24 @@ import net.minecraft.entity.Entity
 import net.minecraft.entity.LivingEntity
 import net.minecraft.server.command.CommandManager
 import net.minecraft.server.command.ServerCommandSource
-import net.minecraft.text.TranslatableText
+import net.minecraft.text.Text
 
 object EnchantmentCommand {
     val FAILED_ENTITY_EXCEPTION = DynamicCommandExceptionType { entityName: Any ->
-        TranslatableText(
+        Text.translatable(
             "commands.enchant.failed.entity",
             *arrayOf(entityName)
         )
     }
     val FAILED_ITEMLESS_EXCEPTION = DynamicCommandExceptionType { entityName: Any ->
-        TranslatableText(
+        Text.translatable(
             "commands.enchant.failed.itemless",
             *arrayOf(entityName)
         )
     }
-    val FAILED_EXCEPTION = SimpleCommandExceptionType(TranslatableText("commands.enchant.failed"))
+    val FAILED_EXCEPTION = SimpleCommandExceptionType(Text.translatable("commands.enchant.failed"))
 
-    fun register(dispatcher: CommandDispatcher<ServerCommandSource?>) {
+    fun register(dispatcher: CommandDispatcher<ServerCommandSource>) {
         dispatcher.register(
             CommandManager.literal("enchant").requires {
                 it.hasPermissionLevel(2)}.then(
@@ -73,14 +73,14 @@ object EnchantmentCommand {
                         }
                         if (targets.size == 1) {
                             source.sendFeedback(
-                                TranslatableText(
+                                Text.translatable(
                                     "commands.enchant.success.single",
                                     *arrayOf<Any>(enchantment.getName(level), targets.iterator().next().displayName)
                                 ), true
                             )
                         } else {
                             source.sendFeedback(
-                                TranslatableText(
+                                Text.translatable(
                                     "commands.enchant.success.multiple",
                                     *arrayOf(enchantment.getName(level), targets.size)
                                 ), true

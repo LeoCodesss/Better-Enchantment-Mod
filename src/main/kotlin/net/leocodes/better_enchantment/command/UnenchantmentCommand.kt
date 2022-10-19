@@ -11,24 +11,24 @@ import net.minecraft.entity.Entity
 import net.minecraft.entity.LivingEntity
 import net.minecraft.server.command.CommandManager
 import net.minecraft.server.command.ServerCommandSource
-import net.minecraft.text.TranslatableText
+import net.minecraft.text.Text
 
 
 object UnenchantmentCommand {
     val FAILED_NOENCHANTMENT_EXCEPTION = DynamicCommandExceptionType { enchantmentName: Any ->
-        TranslatableText(
+        Text.translatable(
             "commands.enchant.failed.noenchantment",
             *arrayOf(enchantmentName)
         )
     }
     val FAILED_NOT_VALID_ENTITY_EXCEPTION = DynamicCommandExceptionType { entityName: Any ->
-        TranslatableText(
+        Text.translatable(
             "commands.enchant.failed.not_valid_entity",
             *arrayOf(entityName)
         )
     }
 
-    fun register(dispatcher: CommandDispatcher<ServerCommandSource?>) {
+    fun register(dispatcher: CommandDispatcher<ServerCommandSource>) {
         dispatcher.register(
             CommandManager.literal("disenchant").requires {
                 it.hasPermissionLevel(2)
@@ -106,7 +106,7 @@ object UnenchantmentCommand {
                                         .putInt("lvl", newLevel)
                                     if (level == 1) {
                                         source.sendFeedback(
-                                            TranslatableText(
+                                            Text.translatable(
                                                 "commands.enchant.success.level.single",
                                                 *arrayOf(
                                                     level,
@@ -116,7 +116,7 @@ object UnenchantmentCommand {
                                         )
                                     } else {
                                         source.sendFeedback(
-                                            TranslatableText(
+                                            Text.translatable(
                                                 "commands.enchant.success.level.multiple",
                                                 *arrayOf(
                                                     level,
@@ -128,7 +128,7 @@ object UnenchantmentCommand {
                                 } else {
                                     enchantmentListIterator.remove()
                                     source.sendFeedback(
-                                        TranslatableText(
+                                        Text.translatable(
                                             "commands.enchant.success",
                                             *arrayOf(
                                                 keyToName(enchantment.translationKey)
@@ -139,7 +139,7 @@ object UnenchantmentCommand {
                             } else {
                                 enchantmentListIterator.remove()
                                 source.sendFeedback(
-                                    TranslatableText(
+                                    Text.translatable(
                                         "commands.enchant.success",
                                         *arrayOf(
                                             keyToName(enchantment.translationKey)
