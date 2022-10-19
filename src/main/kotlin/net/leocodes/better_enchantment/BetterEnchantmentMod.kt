@@ -15,8 +15,6 @@ object BetterEnchantmentMod: ModInitializer {
     override fun onInitialize() {
         CommandRegistrationCallback.EVENT.register(CommandRegistrationCallback { dispatcher: CommandDispatcher<ServerCommandSource?>, _: Boolean ->
             EnchantmentCommand.register(dispatcher)
-        })
-        CommandRegistrationCallback.EVENT.register(CommandRegistrationCallback { dispatcher: CommandDispatcher<ServerCommandSource?>, _: Boolean ->
             UnenchantmentCommand.register(dispatcher)
         })
     }
